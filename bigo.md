@@ -3,6 +3,9 @@
 To be reviewed:
 * Ex 8
 * Ex 9
+* Ex 12
+* Ex 14
+* Ex v 1.6, 1.9, 1.10, 1.11, 1.11
 
 Big O: upper bound
 
