@@ -28,12 +28,9 @@ Exercices to be reviewed:
 
 ## Java API
 
-* String.charAt(i)
 * Arrays.sort([])
 * for(int i=0, j=0, i<5; i++, j++)
-* String.toCharArray()
 * boolean instead of int if possible
-* StringBuilder with initial capacity
 * LinkedList benefit: add or remove item from the beginnin in constant time
 
 ## Big O
@@ -99,6 +96,16 @@ Not an O(n²) as both a and b matters, so O(ab)
 
 We should use N only if there is no ambiguity
 
+## Arrays and Strings
+
+Arrays and Strings questions are interchangeable
+
+String.charAt(i)
+
+String.toCharArray()
+
+StringBuilder with initial capacity
+
 ## Linked list
 
 Make sure to ask during the interview whether it is a single or a doubly list
@@ -119,4 +126,94 @@ Stack are useful with recursivity
 
 Stack & queue: not constant access to the ith item but constant access with add and remove
 
+Stack:
+* pop()
+* push(item)
+* peek()
+* isEmpty()
 
+Queue:
+* add(item)
+* remove()
+* peek()
+* isEmpty()
+
+## Trees and Graphs
+
+Binary tree: tree with each node has up to two children
+
+Binary search tree: binary tree in which every node must fit the property _all left descendents <= n < all right descendents_
+
+Balanced binary tree: left and right subtrees may not be exactly the same size but balance enough to ensure O(log n) times for insert and find
+
+Complete binary tree: every level of the tree is fully filled (with last level filled from the left to the right)
+
+```
+   1
+  / \
+ 2
+```
+=> complete binary tree
+
+```
+   1
+  / \
+     2
+``` 
+=> not a complete binary tree
+
+Full binary tree: every node has either zero or two children
+
+Perfect binary tree: full and complete (1, 2, 4 etc. nodes)
+
+In-order traversal
+```java
+void traverse(TreeNode node) {
+	if(node != null) {
+		traverse(node.left);
+		visit(node)
+		traverse(node.right)
+	}
+}
+```
+
+Pre-order (current before child nodes)
+```java
+void traverse(TreeNode node) {
+	if(node != null) {
+		visit(node)
+		traverse(node.left);
+		traverse(node.right)
+	}
+}
+```
+
+Post-order (current node after its child nodes)
+```java
+void traverse(TreeNode node) {
+	if(node != null) {
+		traverse(node.left);
+		traverse(node.right)
+		visit(node)
+	}
+}
+```
+
+Min-heap: 
+* Complete binary tree where each node is smaller than its children
+* Insert is started by inserting the element at the bottom (to maintain the complete tree property), then swapping with its parent (O(log n))
+* Extract min element: remove the root (min), then swap it with the bottommost/rightmost element, then we try to fix the new root by either swapping it with the left or the right (min of the two children)
+
+Tries (prefix trees):
+* n-ary tree in which characters are stored at each node
+* Each path down the tree may represent a word
+* Null node to indicate a complete word
+
+
+A tree is a type of graph
+
+A graph may contain cycle (acyclic graph: without cycles)
+
+Adjacency list:
+* Most common way to represent a graph
+* Every vertex (or node) stores a list of adjacent verticles
