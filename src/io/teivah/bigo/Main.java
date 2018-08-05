@@ -2,6 +2,12 @@ package io.teivah.bigo;
 
 public class Main {
 	public static void main(final String[] args) {
-		System.out.println("abc".substring(0, 0));
+		new Main().main();
+	}
+
+	public void main() {
+		for (int i = 0, j = 0; i < 5; i++, j++) {
+			System.out.println(i + " " + j);
+		}
 	}
 }
