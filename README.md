@@ -20,6 +20,8 @@ Exercices to be reviewed:
 * Ex 2.8
 * Ex 3.1
 * Ex 3.5
+* Ex 4.2
+* Ex 4.4
 
 ## General
 
@@ -138,6 +140,9 @@ Queue:
 * peek()
 * isEmpty()
 
+Queue implementation => LinkedList:
+* LinkedList.removeFirst() to dequeue()
+
 ## Trees and Graphs
 
 Binary tree: tree with each node has up to two children
@@ -217,3 +222,58 @@ A graph may contain cycle (acyclic graph: without cycles)
 Adjacency list:
 * Most common way to represent a graph
 * Every vertex (or node) stores a list of adjacent verticles
+
+Adjacency matrix:
+* N*N boolean matrix (N the number of nodes) where a true at matrix[i][j] means an edge from node i to node j
+* Undirected graph (no direction for an edge), an adjacency matrix will be symmetric but it's not necessarily the case with a directed graph
+
+Graph search:
+* Depth-first (DFS): explore each branch completely before moving on to the next branch
+* Breadth-first (BFS): start at the root (or any node) and explore each neighbor before going on to any of their children
+
+Shortest path: BFS is generally better
+
+DFS:
+```java
+void dfs(Node root) {
+	if(root == null) return;
+	root.visited = true;
+	visit(root) // Do something with root
+	
+	for(Node n: root.adjacent) {
+		if(!n.visited) {
+			search(n)
+		}
+	}
+}
+```
+
+BFS (not recursive, using a queue):
+```java
+void bfs(Node root) {
+	LinkedList<Node> queue = new LinkedList<>();
+	root.visited = true;
+	queue.enqueue(root);
+	
+	while(!queue.isEmpty()) {
+		Node r = queue.remove();
+		visit(t);
+		for(Node n : r.adjacent) {
+			if(!n.visited) {
+				n.visited = true;
+				queue.enqueue(n);
+			}
+		}
+	}
+}
+```
+
+Bidirectional search:
+* Used to find the shortest path between a source and a destination node
+* Two simultaneous bredth-first searches, one from each node
+
+Java tree => TreeNode:
+* int getChildCount()
+* getChildAt(int)
+* TreeNode getParent()
+* boolean isLeaf()
