@@ -17,6 +17,8 @@ To be reviewed:
 * Bit manipulation exercices
 * Chapter 6
 * Chapter 7
+* BigInteger vs Long
+* HashSet
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -28,6 +30,13 @@ Exercices to be reviewed:
 * Ex 4.4
 * Ex 4.6
 * Ex 4.7
+* Ex 8.4
+* Ex 8.5
+* Ex 8.6
+
+## Java
+
+Set.toArray()
 
 ## General
 
@@ -390,3 +399,31 @@ Top-down approach: how to divide the problem for case N into subproblems
 Recursive implementations: at least O(n) memory
 
 Memoization (dynamic programming): caching results for future recursive calls
+
+/!\ Using x and y when dealing with two-dimensional array => m[y][x]
+
+Permutation algorithm:
+```java
+List<String> f(String s) {
+	List<String> result = new ArrayList<>();
+	f("", str, result);
+	return result;
+}
+
+void f(String prefix, String suffix, List<String> result) {
+	int len = suffix.length();
+	if(len == 0) {
+		result.add(prefix);
+		return;
+	}
+	
+	for(int i=0; i<len; i++) {
+		String before = suffix.substring(0, i);
+		String after = suffix.substring(i+1, len);
+		char c = suffix.charAt(i);
+		f(prefix + c, before + after, result);
+	}
+}
+```
+
+Loop in a recursive method => code smell? The loop isn't already managed by the recursion?
