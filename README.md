@@ -1,11 +1,9 @@
 # Cracking the Coding Interview
 
-Missing chapters:
+To be reviewed:
 * Chapter III: special situations
 * Chapter V: behavioral questions
 * Chapter VII: technical questions
-
-To be reviewed:
 * Ascii vs unicode?
 * Bit vector? (1 << val)
 * End of array character \0?
@@ -13,6 +11,12 @@ To be reviewed:
 * LinkedList java
 * Stack and queue basic implementation
 * Merge sort, quick sort
+* Map, entrySet, iteration
+* Graph Java implementation?
+* From 4.9
+* Bit manipulation exercices
+* Chapter 6
+* Chapter 7
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -22,6 +26,8 @@ Exercices to be reviewed:
 * Ex 3.5
 * Ex 4.2
 * Ex 4.4
+* Ex 4.6
+* Ex 4.7
 
 ## General
 
@@ -148,6 +154,7 @@ Queue implementation => LinkedList:
 Binary tree: tree with each node has up to two children
 
 Binary search tree: binary tree in which every node must fit the property _all left descendents <= n < all right descendents_
+*All nodes*!
 
 Balanced binary tree: left and right subtrees may not be exactly the same size but balance enough to ensure O(log n) times for insert and find
 
@@ -277,3 +284,109 @@ Java tree => TreeNode:
 * getChildAt(int)
 * TreeNode getParent()
 * boolean isLeaf()
+
+Graph API:
+* createNode(data)
+* addEdge(first, second)
+
+Last: 4.9
+
+## Bit manipulation
+
+* ```&``` AND bit by bit (n & n = n, 2 & 1 = 1)
+* ```|``` OR bit by bit (n | n = n)
+* ```^``` XOR bit by bit
+* ```<<``` shift on the left
+* ```>>``` shift on the right
+* ```~``` complement
+
+* n * 2 => shift on the left by 1 (0110 << 1 = 1100)
+* n * 4 => shift on the left by 2 (0011 << 2 = 1100)
+
+0s: sequence of 0
+
+Tricks:
+* x ^ 0s = x
+* x ^ 1s = ~x
+* x ^ x = 0
+* x & 0s = 0
+* x & 1s = x 
+* x & x = x
+* x | 0s = x
+* x | 1s = 1s 
+* x | x = x
+
+Two complement and negative numbers?
+
+* ```>>``` arithmetic shift
+* ```>>>``` logical shift (shift the sign bit as well)
+
+Get bit:
+```java
+boolean getBit(final int num, final int i) {
+    return ((num & (1 << i)) != 0);
+}
+```
+
+Set bit:
+```java
+int setBit(final int num, final int i) {
+    return num | (1 << i);
+}
+```
+
+Clear bit:
+```java
+int clearBit(final int num, final int i) {
+    final int mask = ~(1 << i);
+    return num & mask;
+}
+```
+
+Clear bits from most significant one to i:
+```java
+int clearBitsFromMsbToI(int num, int i) {
+    int mask = (1 << i) - 1;
+    return num & mask;
+}
+```
+
+Clear bits from i to 0:
+```java
+int clearBitsFromITo0(int num, int i) {
+    int mask = (-1 << (i + 1));
+    return num & mask;
+}
+```
+
+Update a bit:
+```java
+int updateBit(int num, int i, boolean bit) {
+    int value = bit ? 1 : 0;
+    int mask = ~(1 << i);
+    return (num & mask) | (value << i);
+}
+```
+
+## OO
+
+* Questions intentionally vague => to be clarified
+* Identify the core objects
+* Analyze relationships
+* Investigate actions
+
+Questions to be asked: who, what, where, when, how, why
+
+## Recursion and Dynamic Programming
+
+Good candidate for recursion:
+* "... to compute the nth..."
+* "... to list the first n..."
+* "... to compute all..."
+
+Bottom-up approach: start with 1 element, then 2, then 3 etc.
+Top-down approach: how to divide the problem for case N into subproblems
+
+Recursive implementations: at least O(n) memory
+
+Memoization (dynamic programming): caching results for future recursive calls
