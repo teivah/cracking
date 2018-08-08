@@ -42,6 +42,7 @@ Exercices to be reviewed:
 ## Java
 
 Set.toArray()
+Sub array: Arrays.copyOfRange(array, start, end)
 
 ## General
 
@@ -461,3 +462,35 @@ Considerations:
 
 ## Sorting and Searching
 
+### Bubble sort
+
+Runtime: O(n²) average and worst case
+Memory: O(1)
+
+Swapping pair if first is greater than the second. Start from pair 1, pair 2 etc. until the array is sorted.
+
+### Selection sort
+
+Runtime: O(n²) average and worst case
+Memory: O(1)
+
+Find the smallest and swap it with the first element, then the second smallest etc.
+
+### Merge sort
+
+Runtime: O(n log(n)) average and worst case
+Memory: depends
+
+* It divides input array in two halves
+* Falls itself for the two halves and then merges the two sorted halves
+
+```java
+void mergesort(int[] array, int[] helper, int low, int high) {
+	if(low < high) {
+		int middle = (low + high) / 2
+		mergesort(array, helper, low, middle);
+		mergesort(array, helper, middle+1, high);
+		merge(array, helper, low, middle, high);
+	}
+}
+```
