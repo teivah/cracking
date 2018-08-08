@@ -19,6 +19,11 @@ To be reviewed:
 * Chapter 7
 * BigInteger vs Long
 * HashSet
+* https://www.youtube.com/watch?v=uQdy914JRKQ
+* From 8.13
+* Why does asynchronous scale better?
+* Asynchronous IO
+* From 9.1
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -427,3 +432,32 @@ void f(String prefix, String suffix, List<String> result) {
 ```
 
 Loop in a recursive method => code smell? The loop isn't already managed by the recursion?
+
+**In a recursion, we should not use a List and to add and remove elements, instead, use an array with an index (a[i] = 0, a[i] = 1 etc.)**
+
+## Systems Design and Scalability
+
+1. Scope the problem
+2. Make assumptions
+3. Major components
+4. Key issues
+5. Redesign for key issues
+
+Denormalization: adding redundant information into a database to speed up reads
+
+DB partitioning (sharding):
+* Vertical: by feature
+* Key or hash based
+* Directory based: lookup table for where the data can be found (spof)
+
+Bandwidth: maximum amount of data that can be transferred in a unit of time
+
+Considerations:
+* Failure
+* Availability
+* Reliability: probability that a system is operational for a certain unit of time
+* Read-heavy vs write-heavy
+* Security
+
+## Sorting and Searching
+
