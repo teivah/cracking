@@ -480,7 +480,7 @@ Find the smallest and swap it with the first element, then the second smallest e
 ### Merge sort
 
 Runtime: O(n log(n)) average and worst case
-Memory: depends
+Memory: O(n)
 
 * It divides input array in two halves
 * Falls itself for the two halves and then merges the two sorted halves
@@ -521,3 +521,21 @@ public static void merge(int[] array, int[] helper, int low, int middle, int hig
     }
 }
 ```
+
+### Merge sort
+
+Runtime: O(n log(n)) average, O(n²) worst case
+Memory: O(log(n))
+
+Pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it.
+
+The pivot is not guaranteed to be the median so the sorting could be very slow and be O(n²) worst case.
+
+### Radix sort
+
+Runtime: O(kn) where n is the number of elements and k the number of passes of the sorting algorithm
+
+Takes advantage of the fact that integers and others have a finite number of bits
+
+Iteration through each digit of the number, grouping numbers by each digit
+
