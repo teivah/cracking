@@ -6,44 +6,38 @@ public class Sandbox {
 	}
 
 	public void main() {
-		System.out.println((7 & 1) > 0);
+		int[] a = new int[]{1, 4, 10, 0, 0};
+		int[] b = new int[]{2, 6};
 
+		merge(a, b);
+		for (int i = 0; i < a.length; i++) {
+			System.out.println(a[i]);
+		}
 	}
 
-	int updateBits(final int n, final int m, final int i, final int j) {
-		final int allOnes = ~0;
-		final int left = allOnes << (j + 1);
-		System.out.println(Integer.toBinaryString(left));
+	public void merge(int[] a, int[] b) {
+		int i = 0;
+		int j = 0;
 
-		return -1;
+		while (i < a.length && j < b.length) {
+			if (a[i] == 0 && j == b.length) {
+				return;
+			}
+
+			if (a[i] == 0) {
+				a[i++] = b[j];
+			} else if (a[i] <= b[j]) {
+				i++;
+			} else {
+				swap(a, b, i, j);
+				i++;
+			}
+		}
 	}
 
-	boolean getBit(final int num, final int i) {
-		return ((num & (1 << i)) != 0);
-	}
-
-	int setBit(final int num, final int i) {
-		return num | (1 << i);
-	}
-
-	int clearBit(final int num, final int i) {
-		final int mask = ~(1 << i);
-		return num & mask;
-	}
-
-	int clearBitsFromMsbToI(final int num, final int i) {
-		final int mask = (1 << i) - 1;
-		return num & mask;
-	}
-
-	int clearBitsFromITo0(final int num, final int i) {
-		final int mask = (-1 << (i + 1));
-		return num & mask;
-	}
-
-	int updateBit(final int num, final int i, final boolean bit) {
-		final int value = bit ? 1 : 0;
-		final int mask = ~(1 << i);
-		return (num & mask) | (value << i);
+	public void swap(int[] a, int[] b, int i, int j) {
+		int temp = a[i];
+		a[i] = b[j];
+		b[j] = temp;
 	}
 }

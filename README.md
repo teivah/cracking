@@ -25,6 +25,7 @@ To be reviewed:
 * Asynchronous IO
 * From 9.1
 * GeeksforGeeks
+* BucketSort
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -40,22 +41,19 @@ Exercices to be reviewed:
 * Ex 8.5
 * Ex 8.6
 
-## Java
-
-Set.toArray()
-Sub array: Arrays.copyOfRange(array, start, end)
-
 ## General
 
 * Make sure to not be blocked on a wrong hypothesis
-* Draw a current situation and after
+* Draw a situation currently and after
 
 ## Java API
 
-* Arrays.sort([])
+* void Arrays.sort([])
 * for(int i=0, j=0, i<5; i++, j++)
 * boolean instead of int if possible
 * LinkedList benefit: add or remove item from the beginnin in constant time
+* Set.toArray()
+* Sub array: Arrays.copyOfRange(array, start, end)
 
 ## Big O
 
