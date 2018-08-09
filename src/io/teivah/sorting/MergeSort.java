@@ -33,14 +33,17 @@ public class MergeSort {
 			current++;
 		}
 
-		int remaining = middle - helperLeft;
-		for (int i = 0; i <= remaining; i++) {
-			array[current + i] = helper[helperLeft + i];
+//		int remaining = middle - helperLeft;
+//		for (int i = 0; i <= remaining; i++) {
+//			array[current + i] = helper[helperLeft + i];
+//		}
+		while (helperLeft <= middle) {
+			array[current++] = helper[helperLeft++];
 		}
 	}
 
 	public static void main(String[] args) {
-		int[] a = {3, 2, 5, 10, 1, 7, 0};
+		int[] a = {3, 2, 5, 4, 4, 7, 10, 1, 7, 0, 1, 3, 9, 2, 5};
 		mergesort(a);
 		display(a);
 	}

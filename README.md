@@ -24,6 +24,7 @@ To be reviewed:
 * Why does asynchronous scale better?
 * Asynchronous IO
 * From 9.1
+* GeeksforGeeks
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -492,5 +493,31 @@ void mergesort(int[] array, int[] helper, int low, int high) {
 		mergesort(array, helper, middle+1, high);
 		merge(array, helper, low, middle, high);
 	}
+}
+
+public static void merge(int[] array, int[] helper, int low, int middle, int high) {
+	// Copy array to helper (from low to high)
+	for (int i = low; i <= high; i++) {
+        helper[i] = array[i];
+    }
+	
+    int helperLeft = low;
+    int helperRight = middle + 1;
+    int current = low;
+
+    // Fill array using the min of helper[helperLeft] and helper[helperRight]
+    while (helperLeft <= middle && helperRight <= high) {
+        if (helper[helperLeft] <= helper[helperRight]) {
+            array[current] = helper[helperLeft++];
+        } else {
+            array[current] = helper[helperRight++];
+        }
+        current++;
+    }
+
+    // If helperLeft != middle, we just need to fill array with the remaining elements
+    while (helperLeft <= middle) {
+        array[current++] = helper[helperLeft++];
+    }
 }
 ```
