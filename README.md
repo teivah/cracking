@@ -39,6 +39,7 @@ Exercices to be reviewed:
 * Ex 4.4
 * Ex 4.6
 * Ex 4.7
+* Ex 4.9
 * Ex 8.4
 * Ex 8.5
 * Ex 8.6
@@ -449,6 +450,32 @@ int updateBit(int num, int i, boolean bit) {
 * Investigate actions
 
 Questions to be asked: who, what, where, when, how, why
+
+## Java
+
+* Overloading: two methods with the same same but different number or type of arguments
+* Overriding: method inherited
+
+Return in a try => finally is called
+
+Finalize: called by the GC
+
+Vector: same than ArrayList but synchronized
+
+LinkedList vs ArrayList:
+* Search with LinkedList: O(n)
+* Search with ArrayList: O(1)
+* Insert/Deletion with LinkedList: O(1)
+* Insert/Deletion with ArrayList: O(1) worst case (last/first element) and O(n) best case (first/last element)
+
+* HashMap: O(1) lookup and insertion (implemented using an array of linked lists)
+* TreeMap: O(log N) lookup and insertion but keys are ordered (keys must implement Comparable interface)
+* LinkedHashMap: O(1) lookup and insertion and keys are ordered by their insertion order
+
+Reflection: way to get reflective informative
+
+Stream:
+* Reduce: ```.reduce(0, (a, b) -> a + b); // 0, assocative function```
 
 ## Recursion and Dynamic Programming
 
