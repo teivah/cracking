@@ -5,7 +5,6 @@ To be reviewed:
 * Chapter V: behavioral questions
 * Chapter VII: technical questions
 * Ascii vs unicode?
-* Bit vector? (1 << val)
 * End of array character \0?
 * getCharNumber p 196
 * LinkedList java
@@ -26,6 +25,9 @@ To be reviewed:
 * From 9.1
 * GeeksforGeeks
 * BucketSort
+* External sort?
+* How to balance a binary tree? Cost?
+* Bijectif, etc.
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -40,13 +42,16 @@ Exercices to be reviewed:
 * Ex 8.4
 * Ex 8.5
 * Ex 8.6
+* Ex 10.7 follow up
 
 ## General
 
 * Make sure to not be blocked on a wrong hypothesis
 * Draw a situation currently and after
 
-## Java API
+## Java
+
+### API
 
 * void Arrays.sort([])
 * for(int i=0, j=0, i<5; i++, j++)
@@ -54,6 +59,19 @@ Exercices to be reviewed:
 * LinkedList benefit: add or remove item from the beginnin in constant time
 * Set.toArray()
 * Sub array: Arrays.copyOfRange(array, start, end)
+* String.isEmpty()
+* java.util.BitSet (bit manipulation structure<)
+
+### Size
+
+* byte: 1 byte
+* short: 2 bytes (32767)
+* int: 4 bytes (2M)
+* long: 8 bytes
+* float: 4 bytes
+* double: 8 bytes
+* char: 2 bytes
+* boolean: not defined (let's assume 1 byte)
 
 ## Big O
 
@@ -127,6 +145,10 @@ String.charAt(i)
 String.toCharArray()
 
 StringBuilder with initial capacity
+
+* Ascii: 127 characters (1 byte)
+* Unicode: superset of ASCII with 2^21 characters
+* UTF-8: encoding (not a character set like ascii or unicode, encoding is the translation of a list of characters in binary)
 
 ## Linked list
 
@@ -225,6 +247,22 @@ void traverse(TreeNode node) {
 }
 ```
 
+Reverse a binary tree:
+```java
+public void reverse(Node node) {
+    if (node == null) {
+        return;
+    }
+
+    Node temp = node.right;
+    node.right = node.left;
+    node.left = temp;
+
+    reverse(node.left);
+    reverse(node.right);
+}
+```
+
 Min-heap: 
 * Complete binary tree where each node is smaller than its children
 * Insert is started by inserting the element at the bottom (to maintain the complete tree property), then swapping with its parent (O(log n))
@@ -234,7 +272,6 @@ Tries (prefix trees):
 * n-ary tree in which characters are stored at each node
 * Each path down the tree may represent a word
 * Null node to indicate a complete word
-
 
 A tree is a type of graph
 
@@ -303,7 +340,31 @@ Graph API:
 * createNode(data)
 * addEdge(first, second)
 
-Last: 4.9
+Weaving: merging two arrays in all possible ways while keeping the elements within each array in the same relative order ({1, 2} and {3, 4} never start by 2 for example)
+```java
+private void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second,
+							ArrayList<LinkedList<Integer>> results, LinkedList<Integer> prefix) {
+    if (first.size() == 0 || second.size() == 0) {
+        LinkedList<Integer> result = (LinkedList<Integer>) prefix.clone();
+        result.addAll(first);
+        result.addAll(second);
+        results.add(result);
+        return;
+    }
+
+    int headFirst = first.removeFirst();
+    prefix.addLast(headFirst);
+    weaveLists(first, second, results, prefix);
+    prefix.removeLast();
+    first.addFirst(headFirst);
+
+    int headSecond = second.removeFirst();
+    prefix.addLast(headSecond);
+    weaveLists(first, second, results, prefix);
+    prefix.removeLast();
+    second.addFirst(headSecond);
+}
+```
 
 ## Bit manipulation
 
@@ -329,6 +390,8 @@ Tricks:
 * x | 0s = x
 * x | 1s = 1s 
 * x | x = x
+
+XORing a bit with 1 = flip the bit
 
 Two complement and negative numbers?
 
