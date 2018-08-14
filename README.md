@@ -12,7 +12,7 @@ To be reviewed:
 * Merge sort, quick sort
 * Map, entrySet, iteration
 * Graph Java implementation?
-* From 4.9
+* From 4.10
 * Bit manipulation exercices
 * Chapter 6
 * Chapter 7
@@ -190,8 +190,7 @@ Queue implementation => LinkedList:
 
 Binary tree: tree with each node has up to two children
 
-Binary search tree: binary tree in which every node must fit the property _all left descendents <= n < all right descendents_
-*All nodes*!
+Binary search tree: binary tree in which every node must fit the property __all left descendents <= n < all right descendents__
 
 Balanced binary tree: left and right subtrees may not be exactly the same size but balance enough to ensure O(log n) times for insert and find
 
