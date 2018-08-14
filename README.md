@@ -39,6 +39,7 @@ To be reviewed:
 * External sort?
 * How to balance a binary tree? Cost?
 * Bijectif, etc.
+* Binary heap
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -164,21 +165,33 @@ StringBuilder with initial capacity
 
 ## Linked list
 
-Make sure to ask during the interview whether it is a single or a doubly list
+A linked list can be single or doubly (reference to the previous and the next)
 
 Runner technique: second pointer moving slower or faster than the first one.
 E.g. a second pointer moving to 2 elements instead of 1
 
-If you're having trouble solving a liked list problem, you should explore if a recursive approach will work
+* Insert cost: head or tail O(1) otherwise O(n)
+* Delete cost: head or tail O(1) otherwise O(n)
+* Search cost: O(n)
 
-Recursive algo: at least O(n) space (due to recursive calls)
+## Hash table
+
+Hash function + linked lists
+
+### Interview
+
+Make sure to ask during the interview whether it is a single or a doubly list
+
+If you're having trouble solving a liked list problem, you should explore if a recursive approach will work
 
 ## Stacks and Queues
 
-* Stack: LIFO
-* Queue: FIFO
+* Stack: LIFO (books) => Stack
+* Queue: FIFO (waiting line) => LinkedList
 
 Stack are useful with recursivity
+
+Both can be implemented using a linked list
 
 Stack & queue: not constant access to the ith item but constant access with add and remove
 
@@ -193,9 +206,6 @@ Queue:
 * remove()
 * peek()
 * isEmpty()
-
-Queue implementation => LinkedList:
-* LinkedList.removeFirst() to dequeue()
 
 ## Trees and Graphs
 
@@ -232,6 +242,7 @@ Binary search tree:
 
 BST > Hash table:
 * Sorted keys
+* Min/max element
 
 Reverse a binary tree:
 ```java
@@ -300,6 +311,17 @@ void bfs(Node root) {
 	}
 }
 ```
+
+BFS applied to a tree: level order traversal
+```
+    1
+   / \
+  2   3
+ / \
+4   5
+```
+=> 1 2 3 4 5
+[Implem](./src/io/teivah/tree/BFS.java)
 
 DFS:
 * In-order: left-root-right (order)
@@ -501,7 +523,7 @@ Good candidate for recursion:
 Bottom-up approach: start with 1 element, then 2, then 3 etc.
 Top-down approach: how to divide the problem for case N into subproblems
 
-Recursive implementations: at least O(n) memory
+Recursive implementations: at least O(n) memory due to recursive calls
 
 Memoization (dynamic programming): caching results for future recursive calls
 

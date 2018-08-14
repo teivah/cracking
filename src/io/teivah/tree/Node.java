@@ -26,4 +26,16 @@ public class Node {
 		}
 		return s;
 	}
+
+	public static Node generate1To5() {
+		Node root = new Node(1);
+		final Node a = new Node(2);
+		final Node b = new Node(3);
+		root.left = a;
+		root.right = b;
+		a.left = new Node(4);
+		a.right = new Node(5);
+
+		return root;
+	}
 }
