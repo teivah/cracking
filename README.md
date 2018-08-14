@@ -163,6 +163,12 @@ StringBuilder with initial capacity
 * Unicode: superset of ASCII with 2^21 characters
 * UTF-8: encoding (not a character set like ascii or unicode, encoding is the translation of a list of characters in binary)
 
+List Java:
+* remove(index)
+* get(index)
+* set(index, n)
+* add(index, n)
+
 ## Linked list
 
 A linked list can be single or doubly (reference to the previous and the next)
@@ -605,9 +611,10 @@ Algo to arrange a deck of cards (select a card, sort it, select a second card, s
 
 ### Merge sort
 
-Runtime: O(n log(n)) average and worst case
-Memory: O(n)
+* Runtime: O(n log(n)) average and worst case
+* Memory: O(n)
 
+Concept:
 * Divides input array in two halves
 * Falls in the two halves and then merges the two sorted halves
 
@@ -633,22 +640,26 @@ void merge(int[] array, int[] helper, int low, int middle, int high)```
 
 ### Quick sort
 
-Runtime: O(n log(n)) average, O(n²) worst case
-Memory: O(log(n))
+* Runtime: O(n log(n)) average, O(n²) worst case
+* Memory: O(log(n))
 
-Pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it.
+Concept:
+* Partition: pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it. Partition returns the index of the pivot.
+* Sort left
+* Sort right
 
 The pivot is not guaranteed to be the median so the sorting could be very slow and be O(n²) worst case.
 
 Algorithm:
 ```
 void quicksort(int[] array, int left, int right)
+    // Break condition
+    if left >= right return
+
     // Partition the array according to a pivot
-    index = partition(...)
-    if left < index - 1
-        quicksort(array, left, index - 1)
-    if index < right
-        quicksort(array, index, right)
+    indexPivot = partition(...)
+    quicksort(array, left, indexPivot - 1)
+    quicksort(array, indexPivot, right)
 
 int partition(int[] array, int left, int right)
     pivot=array at middle position

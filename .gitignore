@@ -3,3 +3,4 @@ target
 .idea
 cracking.iml
 src/io/teivah/Sandbox.java
+src/io/teivah/Solution.java

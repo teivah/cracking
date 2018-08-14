@@ -2,13 +2,11 @@ package io.teivah.sorting;
 
 public class QuickSort {
 	public static void quicksort(int[] array, int left, int right) {
+		if (left >= right) return;
+
 		int index = partition(array, left, right);
-		if (left < index - 1) {
-			quicksort(array, left, index - 1);
-		}
-		if (index < right) {
-			quicksort(array, index, right);
-		}
+		quicksort(array, left, index - 1);
+		quicksort(array, index, right);
 	}
 
 	public static int partition(int[] array, int left, int right) {
