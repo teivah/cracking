@@ -1,5 +1,9 @@
 # Cracking the Coding Interview
 
+* http://bigocheatsheet.com/
+* http://bigocheatsheet.com/pdf/big-o-cheatsheet.pdf
+
+
 To be reviewed:
 * Chapter III: special situations
 * Chapter V: behavioral questions
@@ -188,64 +192,39 @@ Queue implementation => LinkedList:
 
 ## Trees and Graphs
 
+### Binary tree
+
 Binary tree: tree with each node has up to two children
 
-Binary search tree: binary tree in which every node must fit the property __all left descendents <= n < all right descendents__
-
-Balanced binary tree: left and right subtrees may not be exactly the same size but balance enough to ensure O(log n) times for insert and find
+Balanced binary tree: the depth of the two subtrees of every node never differ by more than 1
 
 Complete binary tree: every level of the tree is fully filled (with last level filled from the left to the right)
 
+Complete binary tree:
 ```
    1
   / \
  2
 ```
-=> complete binary tree
 
+Not complete binary tree:
 ```
    1
   / \
      2
 ``` 
-=> not a complete binary tree
 
-Full binary tree: every node has either zero or two children
+Full binary tree: each node has 0 or 2 childre
 
 Perfect binary tree: full and complete (1, 2, 4 etc. nodes)
 
-In-order traversal
-```java
-void traverse(TreeNode node) {
-	if(node != null) {
-		traverse(node.left);
-		visit(node)
-		traverse(node.right)
-	}
-}
-```
+Binary search tree: 
+* Binary tree in which every node must fit the property __all left descendents <= n < all right descendents__
+* Time complexity: average O(log n), worst O(h) with h the height of the tree
+* Delete: find inorder successor and swap them, average O(log n), worst O(h)
 
-Pre-order (current before child nodes)
-```java
-void traverse(TreeNode node) {
-	if(node != null) {
-		visit(node)
-		traverse(node.left);
-		traverse(node.right)
-	}
-}
-```
-
-Post-order (current node after its child nodes)
-```java
-void traverse(TreeNode node) {
-	if(node != null) {
-		traverse(node.left);
-		traverse(node.right)
-		visit(node)
-	}
-}
-```
+BST > Hash table:
+* Sorted keys
 
 Reverse a binary tree:
 ```java
@@ -273,7 +252,9 @@ Tries (prefix trees):
 * Each path down the tree may represent a word
 * Null node to indicate a complete word
 
-A tree is a type of graph
+### Graph
+
+A tree is just a type of graph
 
 A graph may contain cycle (acyclic graph: without cycles)
 
@@ -285,26 +266,13 @@ Adjacency matrix:
 * N*N boolean matrix (N the number of nodes) where a true at matrix[i][j] means an edge from node i to node j
 * Undirected graph (no direction for an edge), an adjacency matrix will be symmetric but it's not necessarily the case with a directed graph
 
+### Search
+
 Graph search:
-* Depth-first (DFS): explore each branch completely before moving on to the next branch
 * Breadth-first (BFS): start at the root (or any node) and explore each neighbor before going on to any of their children
+* Depth-first (DFS): explore each branch completely before moving on to the next branch
 
 Shortest path: BFS is generally better
-
-DFS:
-```java
-void dfs(Node root) {
-	if(root == null) return;
-	root.visited = true;
-	visit(root) // Do something with root
-	
-	for(Node n: root.adjacent) {
-		if(!n.visited) {
-			search(n)
-		}
-	}
-}
-```
 
 BFS (not recursive, using a queue):
 ```java
@@ -326,11 +294,51 @@ void bfs(Node root) {
 }
 ```
 
+DFS:
+* In-order: left-root-right (order)
+* Pre-order: root-left-right
+* Post-order: left-right-root
+
+In-order traversal:
+```java
+void traverse(TreeNode node) {
+	if(node != null) {
+		traverse(node.left);
+		visit(node)
+		traverse(node.right)
+	}
+}
+```
+
+Pre-order:
+```java
+void traverse(TreeNode node) {
+	if(node != null) {
+		visit(node)
+		traverse(node.left);
+		traverse(node.right)
+	}
+}
+```
+
+Post-order:
+```java
+void traverse(TreeNode node) {
+	if(node != null) {
+		traverse(node.left);
+		traverse(node.right)
+		visit(node)
+	}
+}
+```
+
 Bidirectional search:
 * Used to find the shortest path between a source and a destination node
 * Two simultaneous bredth-first searches, one from each node
 
-Java tree => TreeNode:
+### Java API
+
+Java tree example:
 * int getChildCount()
 * getChildAt(int)
 * TreeNode getParent()
