@@ -13,7 +13,7 @@ public class BFS {
 
 	public void bfs(Queue<Node> queue) {
 		while (!queue.isEmpty()) {
-			final Node node = queue.remove();
+			final Node node = queue.poll();
 			if (node != null) {
 				System.out.println(node.value);
 				queue.add(node.left);

@@ -203,7 +203,7 @@ Stack:
 
 Queue:
 * add(item)
-* remove()
+* poll() (return null if empty compared to remove() which return an exception)
 * peek()
 * isEmpty()
 
@@ -211,11 +211,9 @@ Queue:
 
 ### Binary tree
 
-Binary tree: tree with each node has up to two children
-
-Balanced binary tree: the depth of the two subtrees of every node never differ by more than 1
-
-Complete binary tree: every level of the tree is fully filled (with last level filled from the left to the right)
+* Binary tree: tree with each node has up to two children
+* Balanced binary tree: the depth of the two subtrees of every node never differ by more than 1 (also called AVL)
+* Complete binary tree: every level of the tree is fully filled (with last level filled from the left to the right)
 
 Complete binary tree:
 ```
@@ -231,9 +229,8 @@ Not complete binary tree:
      2
 ``` 
 
-Full binary tree: each node has 0 or 2 childre
-
-Perfect binary tree: full and complete (1, 2, 4 etc. nodes)
+* Full binary tree: each node has 0 or 2 childre
+* Perfect binary tree: full and complete (1, 2, 4 etc. nodes)
 
 Binary search tree: 
 * Binary tree in which every node must fit the property __all left descendents <= n < all right descendents__
@@ -287,8 +284,12 @@ Adjacency matrix:
 ### Search
 
 Graph search:
-* Breadth-first (BFS): start at the root (or any node) and explore each neighbor before going on to any of their children
-* Depth-first (DFS): explore each branch completely before moving on to the next branch
+* Breadth-first (BFS, largeur): start at the root (or any node) and explore each neighbor before going on to any of their children
+* Depth-first (DFS, profondeur): explore each branch completely before moving on to the next branch
+
+Binary tree space complexity:
+* BFS: O(w), w the max width of the binary tree (max width per level) 
+* DFS: O(h), h the max height of the binary tree 
 
 Shortest path: BFS is generally better
 
@@ -321,6 +322,7 @@ BFS applied to a tree: level order traversal
 4   5
 ```
 => 1 2 3 4 5
+
 [Implem](./src/io/teivah/tree/BFS.java)
 
 DFS:
