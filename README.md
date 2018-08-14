@@ -1,7 +1,10 @@
 # Cracking the Coding Interview
 
+Links:
 * http://bigocheatsheet.com/
 * http://bigocheatsheet.com/pdf/big-o-cheatsheet.pdf
+* https://algs4.cs.princeton.edu/cheatsheet/
+* https://visualgo.net/en
 
 
 To be reviewed:
@@ -568,6 +571,10 @@ Memory: O(1)
 
 Find the smallest and swap it with the first element, then the second smallest etc.
 
+### Insertion sort
+
+Algo to arrange a deck of cards (select a card, sort it, select a second card, sort it etc.)
+
 ### Merge sort
 
 Runtime: O(n log(n)) average and worst case
@@ -575,6 +582,8 @@ Memory: O(n)
 
 * It divides input array in two halves
 * Falls itself for the two halves and then merges the two sorted halves
+
+[Implem](./src/io/teivah/sorting/MergeSort.java)
 
 ```java
 void mergesort(int[] array, int[] helper, int low, int high) {

@@ -66,7 +66,7 @@
 
 
 ### **Binary Tree**
-####D efinition: 
+#### Definition: 
 - Is a tree like data structure where every node has at most two children.
   - There is one left and right child node.
 
