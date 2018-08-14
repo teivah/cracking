@@ -1,5 +1,9 @@
 # Cracking the Coding Interview
 
+Notes:
+* to: included
+* until: excluded
+
 Links:
 * http://bigocheatsheet.com/
 * http://bigocheatsheet.com/pdf/big-o-cheatsheet.pdf
@@ -580,49 +584,30 @@ Algo to arrange a deck of cards (select a card, sort it, select a second card, s
 Runtime: O(n log(n)) average and worst case
 Memory: O(n)
 
-* It divides input array in two halves
-* Falls itself for the two halves and then merges the two sorted halves
+* Divides input array in two halves
+* Falls in the two halves and then merges the two sorted halves
 
 [Implem](./src/io/teivah/sorting/MergeSort.java)
 
-```java
-void mergesort(int[] array, int[] helper, int low, int high) {
-	if(low < high) {
-		int middle = (low + high) / 2
-		mergesort(array, helper, low, middle);
-		mergesort(array, helper, middle+1, high);
-		merge(array, helper, low, middle, high);
-	}
-}
+Algorithm:
 
-public static void merge(int[] array, int[] helper, int low, int middle, int high) {
-	// Copy array to helper (from low to high)
-	for (int i = low; i <= high; i++) {
-        helper[i] = array[i];
-    }
-	
-    int helperLeft = low;
-    int helperRight = middle + 1;
-    int current = low;
-
-    // Fill array using the min of helper[helperLeft] and helper[helperRight]
-    while (helperLeft <= middle && helperRight <= high) {
-        if (helper[helperLeft] <= helper[helperRight]) {
-            array[current] = helper[helperLeft++];
-        } else {
-            array[current] = helper[helperRight++];
-        }
-        current++;
-    }
-
-    // If helperLeft != middle, we just need to fill array with the remaining elements
-    while (helperLeft <= middle) {
-        array[current++] = helper[helperLeft++];
-    }
-}
+```
+void mergesort(int[] array, int[] helper, int low, int high)
+    if low < high
+        mergesort left
+        mergesort right
+        merge both
+        
+void merge(int[] array, int[] helper, int low, int middle, int high)```
+    copy array into helper from low to high
+    left=low, right=middle+1, current=low
+    while left<=middle && right <= high
+        copy helper from either left or right into array[current] (comparison) 
+        increment current and (left or right)
+    copy remaining helper from left to middle into array from current position
 ```
 
-### Merge sort
+### Quick sort
 
 Runtime: O(n log(n)) average, O(n²) worst case
 Memory: O(log(n))
@@ -631,11 +616,34 @@ Pick a random element and partition the array such that all numbers that are les
 
 The pivot is not guaranteed to be the median so the sorting could be very slow and be O(n²) worst case.
 
+Algorithm:
+```
+void quicksort(int[] array, int left, int right)
+    // Partition the array according to a pivot
+    index = partition(...)
+    if left < index - 1
+        quicksort(array, left, index - 1)
+    if index < right
+        quicksort(array, index, right)
+
+int partition(int[] array, int left, int right)
+    pivot=array at middle position
+    while left <= right
+        // Init left and right to make sure that elements before new left are smaller than pivot
+        // and elements afer new right are greater than pivot 
+        while array[left] < pivot left++
+        while array[right] > pivot right++
+        if left <= right 
+            swap elements left and right from array
+            left++, right--
+    return left
+```
+
+[Implem](./src/io/teivah/sorting/QuickSort.java)
+
 ### Radix sort
 
 Runtime: O(kn) where n is the number of elements and k the number of passes of the sorting algorithm
 
-Takes advantage of the fact that integers and others have a finite number of bits
-
-Iteration through each digit of the number, grouping numbers by each digit
+Iteration through each digit of the number (92**0**, 9**2**0 and **9**20), grouping numbers by each digit
 
