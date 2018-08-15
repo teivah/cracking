@@ -154,6 +154,8 @@ We should use N only if there is no ambiguity
 
 Arrays and Strings questions are interchangeable
 
+Arrays max size: Integer.MAX_VALUE
+
 Java:
 * String.charAt(i)
 * String.toCharArray()
@@ -166,7 +168,9 @@ Encoding:
 * UTF-8: encoding (not a character set like ascii or unicode, encoding is the translation of a list of characters in binary)
 
 List Java:
-* remove(index)
+* remove(index):
+    * Average complexity is O(n)
+    * **Removing the latest element is O(1)**
 * get(index)
 * set(index, n)
 * add(index, n)
