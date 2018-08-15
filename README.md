@@ -159,6 +159,7 @@ Arrays max size: Integer.MAX_VALUE
 Java:
 * String.charAt(i)
 * String.toCharArray()
+* String.substring(begin, end) with begin inclusive and end exclusive
 * StringBuilder with initial capacity
 * StringBuilder.append(String)
 
@@ -171,6 +172,7 @@ List Java:
 * remove(index):
     * Average complexity is O(n)
     * **Removing the latest element is O(1)**
+    * Worst complexity is O(n) if we remove the first element
 * get(index)
 * set(index, n)
 * add(index, n)
