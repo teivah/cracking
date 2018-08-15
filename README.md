@@ -61,6 +61,7 @@ Exercices to be reviewed:
 
 * Make sure to not be blocked on a wrong hypothesis
 * Draw a situation currently and after
+* Sum of integers may give a long
 
 ## Java
 
@@ -153,12 +154,13 @@ We should use N only if there is no ambiguity
 
 Arrays and Strings questions are interchangeable
 
-String.charAt(i)
+Java:
+* String.charAt(i)
+* String.toCharArray()
+* StringBuilder with initial capacity
+* StringBuilder.append(String)
 
-String.toCharArray()
-
-StringBuilder with initial capacity
-
+Encoding:
 * Ascii: 127 characters (1 byte)
 * Unicode: superset of ASCII with 2^21 characters
 * UTF-8: encoding (not a character set like ascii or unicode, encoding is the translation of a list of characters in binary)

@@ -1,4 +1,4 @@
-package io.teivah.Arrays;
+package io.teivah.arrays;
 
 import java.util.ArrayList;
 import java.util.Collections;
