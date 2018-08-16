@@ -10,7 +10,6 @@ public class Thrice {
 
 	public void main() {
 		int n = singleNumber(Arrays.asList(1, 2, 4, 3, 3, 2, 2, 3, 1, 1));
-		System.out.println(n);
 	}
 
 	public int singleNumber(final List<Integer> list) {
