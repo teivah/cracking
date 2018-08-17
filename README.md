@@ -40,6 +40,7 @@ To be reviewed:
 * How to balance a binary tree? Cost?
 * Bijectif, etc.
 * Binary heap
+* https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
 
 Exercices to be reviewed:
 * Solution 3 p197
