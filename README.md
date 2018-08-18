@@ -41,6 +41,7 @@ To be reviewed:
 * Bijectif, etc.
 * Binary heap
 * https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
+* Reverse linked list: https://www.interviewbit.com/problems/reverse-link-list-ii/
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -214,9 +215,9 @@ Both can be implemented using a linked list
 Stack & queue: not constant access to the ith item but constant access with add and remove
 
 Stack:
-* pop()
+* pop() // Read and remove an element
+* peek() // Read only
 * push(item)
-* peek()
 * isEmpty()
 
 Queue:
