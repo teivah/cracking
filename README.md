@@ -185,9 +185,12 @@ A linked list can be single or doubly (reference to the previous and the next)
 Runner technique: second pointer moving slower or faster than the first one.
 E.g. a second pointer moving to 2 elements instead of 1
 
+**How to get the middle? Using the runner technique with a fast pointer moving 2 and a slow moving one**
+
 * Insert cost: head or tail O(1) otherwise O(n)
 * Delete cost: head or tail O(1) otherwise O(n)
 * Search cost: O(n)
+
 
 ## Hash table
 
