@@ -1,8 +1,7 @@
 package io.teivah.stack;
 
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class NextGreaterElement {
 	public static void main(String[] args) {
@@ -10,38 +9,23 @@ public class NextGreaterElement {
 	}
 
 	public void main() {
-		int[] a = {4, 5, 2, 10, 9};
-		nge(a);
+		int[] a = {4, 5, 2, 3, 10};
+		nge(a, a.length);
 	}
 
-	public void nge(int[] nums) {
-		int n = nums.length;
-		if (n == 0) {
-			return;
-		}
-
-		Queue<Integer> queue = new LinkedList<>();
-
-		for (int i = 0; i < n; i++) {
-			int curr = nums[i];
-			while (!queue.isEmpty()) {
-				if (curr > queue.peek()) {
-					print(queue.poll(), curr);
-				} else {
-					break;
-				}
+	static void nge(int arr[], int n) {
+		Stack<Integer> stack = new Stack<>();
+		stack.push(arr[0]);
+		for (int i = 1; i <= n - 1; i++) {
+			while (!stack.isEmpty() && arr[i] > stack.peek()) {
+				System.out.println("Pair: " + stack.peek() + ", " + arr[i]);
+				stack.pop();
 			}
-
-			queue.add(curr);
+			stack.push(arr[i]);
 		}
-
-		while (!queue.isEmpty()) {
-			print(queue.poll(), -1);
+		while (!stack.isEmpty()) {
+			System.out.println("Pair: " + stack.peek() + ", " + -1);
+			stack.pop();
 		}
-
-	}
-
-	void print(int element, int next) {
-		System.out.printf("%d -> %d\n", element, next);
 	}
 }

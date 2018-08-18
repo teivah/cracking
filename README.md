@@ -42,6 +42,7 @@ To be reviewed:
 * Binary heap
 * https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
 * Reverse linked list: https://www.interviewbit.com/problems/reverse-link-list-ii/
+* Next greater element
 
 Exercices to be reviewed:
 * Solution 3 p197
