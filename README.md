@@ -215,9 +215,9 @@ Both can be implemented using a linked list
 Stack & queue: not constant access to the ith item but constant access with add and remove
 
 Stack:
+* push(item)
 * pop() // Read and remove an element
 * peek() // Read only
-* push(item)
 * isEmpty()
 
 Queue:
@@ -225,6 +225,11 @@ Queue:
 * poll() (return null if empty compared to remove() which return an exception)
 * peek()
 * isEmpty()
+
+Dequeue Java implem: ArrayDequeue
+* addFirst/last()
+* pollFirst/last()
+* peekFirst/last()
 
 ## Trees and Graphs
 
