@@ -582,7 +582,7 @@ void f(String prefix, String suffix, List<String> result) {
 
 Loop in a recursive method => code smell? The loop isn't already managed by the recursion?
 
-**In a recursion, we should not use a List and to add and remove elements, instead, use an array with an index (a[i] = 0, a[i] = 1 etc.)**
+* Don't forget to copy an object in the resulting array (```new ArrayList<>(list)```), the object could be modified by the caller
 
 ## Systems Design and Scalability
 

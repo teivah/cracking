@@ -29,6 +29,7 @@ public class Permutation {
 		if (dist == arr.length - 1) {
 			result.add(new ArrayList(Arrays.asList(arr)));
 		}
+		// Permute element by element
 		for (int i = dist; i < arr.length; i++) {
 			swap(arr, i, dist);
 			permuteUtil(result, arr, dist + 1);
