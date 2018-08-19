@@ -44,6 +44,7 @@ To be reviewed:
 * Reverse linked list: https://www.interviewbit.com/problems/reverse-link-list-ii/
 * Next greater element
 * 8 queens
+* https://www.interviewbit.com/problems/points-on-the-straight-line/
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -67,6 +68,7 @@ Exercices to be reviewed:
 * Draw a situation currently and after
 * Sum of integers may give a long
 * Exercices with an array, test if a solution is applicable if the array was sorted
+* If the traverse a tree and we want to get the final number representing the root-to-leaf path (1->2->3 => 123), we can recurse by multiplying by 10 each time the current sum
 
 ## Java
 
@@ -242,6 +244,8 @@ Dequeue Java implem: ArrayDequeue
 * Balanced binary tree: the depth of the two subtrees of every node never differ by more than 1 (also called AVL)
 * Complete binary tree: every level of the tree is fully filled (with last level filled from the left to the right)
 
+* Trie: each node does not store a single character but the full content (```a->b->c``` in a trie gives ```a->ab->abc```). Usually implemented using a map of children. 
+
 Complete binary tree:
 ```
    1
@@ -288,11 +292,6 @@ Min-heap:
 * Complete binary tree where each node is smaller than its children
 * Insert is started by inserting the element at the bottom (to maintain the complete tree property), then swapping with its parent (O(log n))
 * Extract min element: remove the root (min), then swap it with the bottommost/rightmost element, then we try to fix the new root by either swapping it with the left or the right (min of the two children)
-
-Tries (prefix trees):
-* n-ary tree in which characters are stored at each node
-* Each path down the tree may represent a word
-* Null node to indicate a complete word
 
 ### Graph
 
