@@ -71,6 +71,7 @@ To be done/reviewed (exercices):
 * Draw a situation currently and after
 * Sum of integers may give a long
 * Exercices with an array, test if a solution is applicable if the array was sorted
+    * Then start with the smaller/greater and see if it help resolving the problem
 * If the traverse a tree and we want to get the final number representing the root-to-leaf path (1->2->3 => 123), we can recurse by multiplying by 10 each time the current sum
 * Finding median of three numbers: calculate sum, remove min and remove max
 
@@ -79,6 +80,7 @@ To be done/reviewed (exercices):
 ### API
 
 * void Arrays.sort([])
+* Arrays to List: Arrays.asList(Integer[]) (not a primitive)
 * for(int i=0, j=0, i<5; i++, j++)
 * boolean instead of int if possible
 * LinkedList benefit: add or remove item from the beginnin in constant time
@@ -86,6 +88,7 @@ To be done/reviewed (exercices):
 * Sub array: Arrays.copyOfRange(array, start, end)
 * String.isEmpty()
 * java.util.BitSet (bit manipulation structure<)
+* **TreeMap: map implementation that keeps its entries sorted**
 
 ### Size
 
