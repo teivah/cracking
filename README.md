@@ -43,6 +43,7 @@ To be reviewed:
 * https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
 * Reverse linked list: https://www.interviewbit.com/problems/reverse-link-list-ii/
 * Next greater element
+* 8 queens
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -583,6 +584,7 @@ void f(String prefix, String suffix, List<String> result) {
 Loop in a recursive method => code smell? The loop isn't already managed by the recursion?
 
 * Don't forget to copy an object in the resulting array (```new ArrayList<>(list)```), the object could be modified by the caller
+* Watch out for **recursive functions and loop**! This may be a code smell as the loop should be brought by the recursion itself. 
 
 ## Systems Design and Scalability
 
