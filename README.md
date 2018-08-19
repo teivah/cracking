@@ -66,6 +66,7 @@ Exercices to be reviewed:
 * Make sure to not be blocked on a wrong hypothesis
 * Draw a situation currently and after
 * Sum of integers may give a long
+* Exercices with an array, test if a solution is applicable if the array was sorted
 
 ## Java
 
