@@ -45,6 +45,7 @@ To be reviewed:
 * Next greater element
 * 8 queens
 * https://www.interviewbit.com/problems/points-on-the-straight-line/
+* Comparable interface
 
 Exercices to be reviewed:
 * Solution 3 p197
@@ -69,6 +70,7 @@ Exercices to be reviewed:
 * Sum of integers may give a long
 * Exercices with an array, test if a solution is applicable if the array was sorted
 * If the traverse a tree and we want to get the final number representing the root-to-leaf path (1->2->3 => 123), we can recurse by multiplying by 10 each time the current sum
+* Finding median of three numbers: calculate sum, remove min and remove max
 
 ## Java
 
