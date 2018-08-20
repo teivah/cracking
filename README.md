@@ -74,6 +74,7 @@ To be done/reviewed (exercices):
     * Then start with the smaller/greater and see if it help resolving the problem
 * If the traverse a tree and we want to get the final number representing the root-to-leaf path (1->2->3 => 123), we can recurse by multiplying by 10 each time the current sum
 * Finding median of three numbers: calculate sum, remove min and remove max
+* Constant extra space: O(1)
 
 ## Java
 
@@ -88,7 +89,6 @@ To be done/reviewed (exercices):
 * Sub array: Arrays.copyOfRange(array, start, end)
 * String.isEmpty()
 * java.util.BitSet (bit manipulation structure<)
-* **TreeMap: map implementation that keeps its entries sorted**
 
 ### Size
 
@@ -272,8 +272,13 @@ Not complete binary tree:
 
 Binary search tree: 
 * Binary tree in which every node must fit the property __all left descendents <= n < all right descendents__
-* Time complexity: average O(log n), worst O(h) with h the height of the tree
 * Delete: find inorder successor and swap them, average O(log n), worst O(h)
+
+Average complexity of a BST is O(log n) for:
+* Insert
+* Delete
+* Search
+* Find min/max
 
 BST > Hash table:
 * Sorted keys
