@@ -28,8 +28,7 @@ public class LargestRectangle {
 		st.push(curr++);
 
 		while (curr < A.size()) {
-			while (!st.isEmpty() && (A.get(curr) < A.get(st.peek())))   // we found smaller element than TOS
-			{
+			while (!st.isEmpty() && (A.get(curr) < A.get(st.peek()))) {  // we found smaller element than TOS
 				int tosIndex = st.pop();        // pop the TOS , we are considering it as minimum height and ll find area for it
 
 				// if stack is empty after popping : then no smaller bar on left hand side of TOS , so multiply it with curr
