@@ -715,3 +715,13 @@ Runtime: O(kn) where n is the number of elements and k the number of passes of t
 
 Iteration through each digit of the number (92**0**, 9**2**0 and **9**20), grouping numbers by each digit
 
+## Dynamic
+
+### Min distance algorithm
+
+* Array of a.length() + 1, b.length() + 1
+* First row and column initialized with 0..n
+* Then:
+    * If char match => top left
+    * Else => min(left, top left, top) + 1
+ 
