@@ -204,16 +204,15 @@ E.g. a second pointer moving to 2 elements instead of 1
 * Delete cost: head or tail O(1) otherwise O(n)
 * Search cost: O(n)
 
-
-## Hash table
-
-Hash function + linked lists
-
 ### Interview
 
 Make sure to ask during the interview whether it is a single or a doubly list
 
 If you're having trouble solving a liked list problem, you should explore if a recursive approach will work
+
+## Hash table
+
+Hash function + linked lists
 
 ## Stacks and Queues
 
