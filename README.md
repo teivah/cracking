@@ -565,9 +565,10 @@ Top-down approach: how to divide the problem for case N into subproblems
 
 Recursive implementations: at least O(n) memory due to recursive calls
 
-Memoization (dynamic programming): caching results for future recursive calls
+* Memoization: caching results for future calls (top down)
+* Dynamic programming: technique for solving problems recursively using tabulation (bottom up) or memoization (top down)
 
-/!\ Using x and y when dealing with two-dimensional array => m[y][x]
+**/!\ Using x and y when dealing with two-dimensional array => m[y][x]**
 
 Permutation algorithm:
 ```java
