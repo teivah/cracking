@@ -594,8 +594,6 @@ void f(String prefix, String suffix, List<String> result) {
 }
 ```
 
-Loop in a recursive method => code smell? The loop isn't already managed by the recursion?
-
 * Don't forget to copy an object in the resulting array (```new ArrayList<>(list)```), the object could be modified by the caller
 * Watch out for **recursive functions and loop**! This may be a code smell as the loop should be brought by the recursion itself. 
 
@@ -645,8 +643,8 @@ Algo to arrange a deck of cards (select a card, sort it, select a second card, s
 
 ### Merge sort
 
-* Runtime: O(n log(n)) average and worst case
-* Memory: O(n)
+* **Runtime: O(n log(n)) average and worst case**
+* **Memory: O(n)**
 
 Concept:
 * Divides input array in two halves
@@ -674,8 +672,8 @@ void merge(int[] array, int[] helper, int low, int middle, int high)```
 
 ### Quick sort
 
-* Runtime: O(n log(n)) average, O(n²) worst case
-* Memory: O(log(n))
+* **Runtime: O(n log(n)) average, O(n²) worst case**
+* **Memory: O(log(n))**
 
 Concept:
 * Partition: pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it. Partition returns the index of the pivot.
