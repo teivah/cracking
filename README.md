@@ -597,29 +597,11 @@ void f(String prefix, String suffix, List<String> result) {
 * Don't forget to copy an object in the resulting array (```new ArrayList<>(list)```), the object could be modified by the caller
 * Watch out for **recursive functions and loop**! This may be a code smell as the loop should be brought by the recursion itself. 
 
-## Systems Design and Scalability
+## Matrix technique
 
-1. Scope the problem
-2. Make assumptions
-3. Major components
-4. Key issues
-5. Redesign for key issues
+One solution to find longest subsequences or similar problem is to use **a matrix to memorize the previous computations**.
 
-Denormalization: adding redundant information into a database to speed up reads
-
-DB partitioning (sharding):
-* Vertical: by feature
-* Key or hash based
-* Directory based: lookup table for where the data can be found (spof)
-
-Bandwidth: maximum amount of data that can be transferred in a unit of time
-
-Considerations:
-* Failure
-* Availability
-* Reliability: probability that a system is operational for a certain unit of time
-* Read-heavy vs write-heavy
-* Security
+Depending on the context, the value of an element may depends on [i-1][j-1] and/or [i][j-1] and/or [i-1][j]. 
 
 ## Sorting and Searching
 
@@ -724,3 +706,26 @@ Iteration through each digit of the number (92**0**, 9**2**0 and **9**20), group
     * If char match => top left
     * Else => min(left, top left, top) + 1
  
+## Systems Design and Scalability
+
+1. Scope the problem
+2. Make assumptions
+3. Major components
+4. Key issues
+5. Redesign for key issues
+
+Denormalization: adding redundant information into a database to speed up reads
+
+DB partitioning (sharding):
+* Vertical: by feature
+* Key or hash based
+* Directory based: lookup table for where the data can be found (spof)
+
+Bandwidth: maximum amount of data that can be transferred in a unit of time
+
+Considerations:
+* Failure
+* Availability
+* Reliability: probability that a system is operational for a certain unit of time
+* Read-heavy vs write-heavy
+* Security

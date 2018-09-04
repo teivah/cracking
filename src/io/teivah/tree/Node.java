@@ -5,7 +5,7 @@ public class Node {
 	public Node left;
 	public Node right;
 
-	Node(int value) {
+	public Node(int value) {
 		this.value = value;
 		right = null;
 		left = null;
@@ -27,7 +27,7 @@ public class Node {
 		return s;
 	}
 
-	public static Node generate1To5() {
+	public static Node generateSample() {
 		Node root = new Node(1);
 		final Node left = new Node(2);
 		final Node right = new Node(3);

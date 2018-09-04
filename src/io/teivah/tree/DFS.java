@@ -2,7 +2,7 @@ package io.teivah.tree;
 
 public class DFS {
 	public static void main(String[] args) {
-		final Node root = Node.generate1To5();
+		final Node root = Node.generateSample();
 		new DFS().inOrder(root);
 		System.out.println("--");
 		new DFS().preOrder(root);

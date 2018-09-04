@@ -6,7 +6,7 @@ import java.util.Queue;
 public class BFS {
 	public static void main(String[] args) {
 		Queue<Node> queue = new LinkedList<>();
-		final Node root = Node.generate1To5();
+		final Node root = Node.generateSample();
 		queue.add(root);
 		new BFS().bfs(queue);
 	}
