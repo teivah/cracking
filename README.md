@@ -39,6 +39,7 @@ Lessons to be reviewed:
 * Chapter VII: technical questions
 * Chapter 6
 * Chapter 7
+* https://www.educative.io/collection/page/5642554087309312/5679846214598656/100002
 
 To be done/reviewed (exercices):
 * Solution 3 p197
@@ -89,6 +90,32 @@ To be done/reviewed (exercices):
 * Sub array: Arrays.copyOfRange(array, start, end)
 * String.isEmpty()
 * java.util.BitSet (bit manipulation structure<)
+
+## Notes
+
+* Overloading: two methods with the same same but different number or type of arguments
+* Overriding: method inherited
+
+Return in a try => finally is called
+
+Finalize: called by the GC
+
+Vector: same than ArrayList but synchronized
+
+LinkedList vs ArrayList:
+* Search with LinkedList: O(n)
+* Search with ArrayList: O(1)
+* Insert/Deletion with LinkedList: O(1)
+* Insert/Deletion with ArrayList: O(1) worst case (last/first element) and O(n) best case (first/last element)
+
+* HashMap: O(1) lookup and insertion (implemented using an array of linked lists)
+* TreeMap: O(log N) lookup and insertion but keys are ordered (keys must implement Comparable interface)
+* LinkedHashMap: O(1) lookup and insertion and keys are ordered by their insertion order
+
+Reflection: way to get reflective informative
+
+Stream:
+* Reduce: ```.reduce(0, (a, b) -> a + b); // 0, assocative function```
 
 ### Size
 
@@ -182,7 +209,7 @@ Encoding:
 * Unicode: superset of ASCII with 2^21 characters
 * UTF-8: encoding (not a character set like ascii or unicode, encoding is the translation of a list of characters in binary)
 
-List Java:
+ArrayList Java:
 * remove(index):
     * Average complexity is O(n)
     * **Removing the latest element is O(1)**
@@ -250,8 +277,6 @@ Dequeue Java implem: ArrayDequeue
 * Balanced binary tree: the depth of the two subtrees of every node never differ by more than 1 (also called AVL)
 * Complete binary tree: every level of the tree is fully filled (with last level filled from the left to the right)
 
-* Trie: each node does not store a single character but the full content (```a->b->c``` in a trie gives ```a->ab->abc```). Usually implemented using a map of children. 
-
 Complete binary tree:
 ```
    1
@@ -265,8 +290,10 @@ Not complete binary tree:
   / \
      2
 ``` 
+* Trie: each node does not store a single character but the full content (```a->b->c``` in a trie gives ```a->ab->abc```). Usually implemented using a map of children. 
 
-* Full binary tree: each node has 0 or 2 childre
+
+* Full binary tree: each node has 0 or 2 children
 * Perfect binary tree: full and complete (1, 2, 4 etc. nodes)
 
 Binary search tree: 
@@ -525,32 +552,6 @@ int updateBit(int num, int i, boolean bit) {
 * Investigate actions
 
 Questions to be asked: who, what, where, when, how, why
-
-## Java
-
-* Overloading: two methods with the same same but different number or type of arguments
-* Overriding: method inherited
-
-Return in a try => finally is called
-
-Finalize: called by the GC
-
-Vector: same than ArrayList but synchronized
-
-LinkedList vs ArrayList:
-* Search with LinkedList: O(n)
-* Search with ArrayList: O(1)
-* Insert/Deletion with LinkedList: O(1)
-* Insert/Deletion with ArrayList: O(1) worst case (last/first element) and O(n) best case (first/last element)
-
-* HashMap: O(1) lookup and insertion (implemented using an array of linked lists)
-* TreeMap: O(log N) lookup and insertion but keys are ordered (keys must implement Comparable interface)
-* LinkedHashMap: O(1) lookup and insertion and keys are ordered by their insertion order
-
-Reflection: way to get reflective informative
-
-Stream:
-* Reduce: ```.reduce(0, (a, b) -> a + b); // 0, assocative function```
 
 ## Recursion and Dynamic Programming
 
