@@ -32,6 +32,8 @@ Know what resources a process needs and a thread needs. Understand how context s
   constraints, simplicity, limitations, robustness and tradeoffs. You should also have an understanding of how
   the internet actually works and be familiar with the various pieces (routers, domain name servers, load
   balancers, firewalls, etc.)
+* Matrix technique with dynamic programming
+* https://www.programcreek.com/2014/05/leetcode-unique-binary-search-trees-ii-java/
 
 Lessons to be reviewed:
 * Chapter III: special situations
@@ -299,6 +301,23 @@ Not complete binary tree:
 Binary search tree: 
 * Binary tree in which every node must fit the property __all left descendents <= n < all right descendents__
 * Delete: find inorder successor and swap them, average O(log n), worst O(h)
+
+Insertion:
+```
+public TreeNode insert(TreeNode root, int a) {
+    if (root == null) {
+        return new TreeNode(a);
+    }
+
+    if (root.val <= a) { // Left
+        root.left = insert(root.left, a);
+    } else { // Right
+        root.right = insert(root.right, a);
+    }
+
+    return root;
+}
+```
 
 Average complexity of a BST is O(log n) for:
 * Insert
