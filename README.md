@@ -364,6 +364,10 @@ Adjacency matrix:
 * N*N boolean matrix (N the number of nodes) where a true at matrix[i][j] means an edge from node i to node j
 * Undirected graph (no direction for an edge), an adjacency matrix will be symmetric but it's not necessarily the case with a directed graph
 
+A graph is:
+* Dense if the number of edges is close the the maximum possible
+* Sparse otherwise
+
 ### Search
 
 Graph search:
