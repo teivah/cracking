@@ -36,6 +36,7 @@ Know what resources a process needs and a thread needs. Understand how context s
   balancers, firewalls, etc.)
 * Matrix technique with dynamic programming
 * https://www.programcreek.com/2014/05/leetcode-unique-binary-search-trees-ii-java/
+* Painter's partition problem
 
 Lessons to be reviewed:
 * Chapter III: special situations
@@ -777,7 +778,20 @@ If 0 based (line 1 => i = 0):
 
 `int value = (line+1-i) * res.get(i-1)/i;`
 
-### Wave array
+### Wave array (a1 >= a2 <= a3 >= a4)
 
 * Sort the array
 * Take indexes 1 0 3 2 5 4 etc. (check if odd, check if last element to not generate an ArrayOutOfBound)
+
+### Max distance in an array with a[i] <= a[j]
+
+* Construct lMin (min from left to right) and rMax (max from right to left)
+* Two iterators i on lMin and j on rMax
+    * If lMin[i] <= rMax[j]: check if max, increments j
+    * Else increments i 
+    
+### Find the starting and ending position of a given target value in a sorted array
+
+* Search the value in O(log n)
+* Search either on the left or on the right in O(log n)
+
