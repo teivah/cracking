@@ -3,6 +3,8 @@
 Notes:
 * to: included
 * until: excluded
+* odd: impair
+* even: pair
 
 Links:
 * http://bigocheatsheet.com/
@@ -752,3 +754,30 @@ Considerations:
 * Reliability: probability that a system is operational for a certain unit of time
 * Read-heavy vs write-heavy
 * Security
+
+## Exercices
+
+### Adding one to an number in an array list
+
+Iterate from the right to the left using a boolean carry (retenue). If at the end carry is true, add 1 to the list at index 0.
+
+### Maximum sub-array of non negative numbers from an array
+
+Iterate over the array with:
+* currentSum
+* maxSum
+* currentArray
+* maxArray
+
+Check each time if the max condition is reached
+
+### Pascal triangle
+
+If 0 based (line 1 => i = 0):
+
+`int value = (line+1-i) * res.get(i-1)/i;`
+
+### Wave array
+
+* Sort the array
+* Take indexes 1 0 3 2 5 4 etc. (check if odd, check if last element to not generate an ArrayOutOfBound)
