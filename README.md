@@ -8,7 +8,6 @@ Notes:
 
 Links:
 * http://bigocheatsheet.com/
-* http://bigocheatsheet.com/pdf/big-o-cheatsheet.pdf
 
 To be done (general):
 * Stack and queue implementation
@@ -46,7 +45,7 @@ Lessons to be reviewed:
 * Chapter 7
 * https://www.educative.io/collection/page/5642554087309312/5679846214598656/100002
 
-To be done/reviewed (exercices):
+Exercices to be done/reviewed (exercices):
 * Solution 3 p197
 * Ex 1.7 p024
 * Ex 2.8
@@ -84,19 +83,7 @@ To be done/reviewed (exercices):
 
 ## Java
 
-### API
-
-* void Arrays.sort([])
-* Arrays to List: Arrays.asList(Integer[]) (not a primitive)
-* for(int i=0, j=0, i<5; i++, j++)
-* boolean instead of int if possible
-* LinkedList benefit: add or remove item from the beginnin in constant time
-* Set.toArray()
-* Sub array: Arrays.copyOfRange(array, start, end)
-* String.isEmpty()
-* java.util.BitSet (bit manipulation structure<)
-
-## Notes
+### Notes
 
 * Overloading: two methods with the same same but different number or type of arguments
 * Overriding: method inherited
@@ -113,14 +100,30 @@ LinkedList vs ArrayList:
 * Insert/Deletion with LinkedList: O(1)
 * Insert/Deletion with ArrayList: O(1) worst case (last/first element) and O(n) best case (first/last element)
 
+Other collections:
 * HashMap: O(1) lookup and insertion (implemented using an array of linked lists)
 * TreeMap: O(log N) lookup and insertion but keys are ordered (keys must implement Comparable interface)
 * LinkedHashMap: O(1) lookup and insertion and keys are ordered by their insertion order
 
-Reflection: way to get reflective informative
+Reflection: way to get reflective information
+
+Comparable interface:
+* `compareTo(T t)` => -1 is smaller than t etc. 
 
 Stream:
 * Reduce: ```.reduce(0, (a, b) -> a + b); // 0, assocative function```
+
+### API
+
+* void Arrays.sort([])
+* Arrays to List: Arrays.asList(Integer[]) (not a primitive)
+* for(int i=0, j=0, i<5; i++, j++)
+* boolean instead of int if possible
+* LinkedList benefit: add or remove item from the beginnin in constant time
+* Set.toArray()
+* Sub array: Arrays.copyOfRange(array, start, end)
+* String.isEmpty()
+* java.util.BitSet (bit manipulation structure<)
 
 ### Size
 
@@ -135,43 +138,25 @@ Stream:
 
 ## Big O
 
-To be reviewed:
-* Ex 8
-* Ex 9
-* Ex 12
-* Ex 14
-* Ex v 1.6, 1.9, 1.10, 1.11, 1.11
+* Big O: upper bound
+* Big Omega: lower bound (fastest)
+* Big Theta: Theta(N) if both O(N) and Omega(N)
 
-Big O: upper bound
+* 2^p = Q <=> log Q = P
+* O(2^log n) = O(n)
+* Square root: √
 
-Big Omega: lower bound (fastest)
- 
-Big Theta: Theta(N) if both O(N) and Omega(N)
-
---
-
-2^p = Q <=> log Q = P
-
-O(2^log n) = O(n)
-
-Square root: √
-
---
-
-O(2n) = O(n)
-
-O(n² + n) = O(n²)
-
-O(n + log N) = O(n)
-
-O(x + 2x + 3x + ... + nx) = O(n²x)
-
---
+* O(2n) = O(n)
+* O(n² + n) = O(n²)
+* O(n + log N) = O(n)
+* O(x + 2x + 3x + ... + nx) = O(n²x)
 
 O(n) may refer to time and space (memory)
+
 Recursivity => space as each call is added to the call stack
 
 Amortized time: worst case happens every x.
+
 Equals the sum of all operation costs divided by the number of operations
 
 O(log n) => algorithms which starts with n elements, then n/2, then n/4 etc.
