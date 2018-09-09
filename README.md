@@ -24,6 +24,8 @@ Summary:
     * Pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it
     * Sort left, sort right
     * Use - 1
+* Matrix: use m[row][col] instead of m[y][x]
+* If question with modulo, it has to be applied during each addition
 
 Process:
 * Listen all information
@@ -35,7 +37,7 @@ Process:
 * Test before to submit: review lines + small test
 
 Optimization:
-* Check bottlenecks (O(n²) then O(n logn) then O(n) etc.)
+* Check bottlenecks (O(n²) then O(n logn) then O(n) etc.). Dynamic programming then memoization (matrix etc.) to reduce the time complexity without any call stack
 * Do it yourself with a big concrete example
 * Simplify and generalize. Example: with a non-sorted array etc. What if the array was sorted? If we solve the problem this way we just have to generalize to the initial problem.
 * Base case and build. Start from the base case (e.g. n=1) and then try to build up from here.
@@ -253,7 +255,9 @@ Not complete binary tree:
   / \
      2
 ``` 
-* Trie: each node does not store a single character but the full content (```a->b->c``` in a trie gives ```a->ab->abc```). Usually implemented using a map of children. 
+
+* Trie: each node does not store a single character but the full content (```a->b->c``` in a trie gives ```a->ab->abc```). Usually implemented using a map of children.
+A trie is used with characters most of the time. 
 
 
 * Full binary tree: each node has 0 or 2 children
