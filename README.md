@@ -41,69 +41,7 @@ Optimization:
 Links:
 * http://bigocheatsheet.com/
 
-To be done (general):
-* Stack and queue implementation
-* Merge sort, quick sort implementation
-* Heap sort?
-* Bucket sort?
-* External sort?
-* Map, entrySet, iteration
-* Comparable interface
-* BigInteger vs Long
-* Djikstra
-* A*
-* Graph: cycle detection
-* Maths
-* Object oriented
-* There are 3 basic ways to represent a graph in memory (objects and pointers, matrix, and adjacency list)
-* Threads
-* Operating Systems: processes, threads, concurrency issues, locks, mutexes, semaphores, monitors and how they all work. Understand deadlock, livelock and how to avoid them. 
-Know what resources a process needs and a thread needs. Understand how context switching works, how it's initiated by the operating system and underlying hardware. Know a little about scheduling. We are rapidly moving towards multi-core, so know the fundamentals of "modern" concurrency constructs
-* System Design: System design questions are used to assess a candidate's ability to combine knowledge,
-  theory, experience and judgement toward solving a real-world engineering problem. Sample topics include
-  features sets, interfaces, class hierarchies, distributed systems, designing a system under certain
-  constraints, simplicity, limitations, robustness and tradeoffs. You should also have an understanding of how
-  the internet actually works and be familiar with the various pieces (routers, domain name servers, load
-  balancers, firewalls, etc.)
-* Matrix technique with dynamic programming
-* https://www.programcreek.com/2014/05/leetcode-unique-binary-search-trees-ii-java/
-* Painter's partition problem
-
-Lessons to be reviewed:
-* Chapter III: special situations
-* Chapter V: behavioral questions
-* Chapter VII: technical questions
-* Chapter 6
-* Chapter 7
-* https://www.educative.io/collection/page/5642554087309312/5679846214598656/100002
-
-Exercices to be done/reviewed (exercices):
-* Solution 3 p197
-* Ex 1.7 p024
-* Ex 2.8
-* Ex 3.1
-* Ex 3.5
-* Ex 4.2
-* Ex 4.4
-* Ex 4.6
-* Ex 4.7
-* Ex 4.9
-* From 4.10
-* Ex 8.4
-* Ex 8.5
-* Ex 8.6
-* From 8.13
-* From 9.1
-* Ex 10.7 follow up
-* https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/
-* Reverse linked list: https://www.interviewbit.com/problems/reverse-link-list-ii/
-* Next greater element
-* 8 queens
-* https://www.interviewbit.com/problems/points-on-the-straight-line/
-* https://www.youtube.com/watch?v=uQdy914JRKQ
-
-## General
-
+General:
 * Make sure to not be blocked on a wrong hypothesis
 * Draw a situation currently and after
 * Sum of integers may give a long
@@ -156,6 +94,7 @@ Stream:
 * Sub array: Arrays.copyOfRange(array, start, end)
 * String.isEmpty()
 * java.util.BitSet (bit manipulation structure<)
+* Map iteration: `for (Map.Entry<String, String> entry : map.entrySet()) { entry.getKey(); entry.getValue(); }`
 
 ### Size
 
