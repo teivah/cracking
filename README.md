@@ -6,6 +6,38 @@ Notes:
 * odd: impair
 * even: pair
 
+Summary:
+* Stack: push, pop
+* Queue: add, poll
+* int []array => array.length
+* List list => list.size();
+* In-order: left-root-right (order)
+* Pre-order: root-left-right
+* Post-order: left-right-root
+* Merge sort: 
+    * Time is O(n log(n)) and memory is O(n)
+    * Divide into two parts and merge them (using a helper and + 1)
+* Quick sort:
+    * Time is O(n log(n)) average, O(n²) worst case, memory is O(log(n))
+    * Pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it
+    * Sort left, sort right
+    * Use - 1
+
+Process:
+* Listen all information
+* Brute force
+* Optimize with unused information. If blocked, use examples.
+* Solve it on examples
+* Time & space
+* Implementation
+* Test before to submit: review lines + small test
+
+Optimization:
+* Check bottlenecks (O(n²) then O(n logn) then O(n) etc.)
+* Do it yourself with a big concrete example
+* Simplify and generalize. Example: with a non-sorted array etc. What if the array was sorted? If we solve the problem this way we just have to generalize to the initial problem.
+* Base case and build. Start from the base case (e.g. n=1) and then try to build up from here.
+
 Links:
 * http://bigocheatsheet.com/
 
@@ -649,10 +681,11 @@ Algorithm:
 
 ```
 void mergesort(int[] array, int[] helper, int low, int high)
-    if low < high
-        mergesort left
-        mergesort right
-        merge both
+    if low >= high return
+    
+    mergesort left
+    mergesort right
+    merge both
         
 void merge(int[] array, int[] helper, int low, int middle, int high)```
     copy array into helper from low to high
@@ -677,26 +710,26 @@ The pivot is not guaranteed to be the median so the sorting could be very slow a
 
 Algorithm:
 ```
-void quicksort(int[] array, int left, int right)
+void quicksort(int[] array, int low, int high)
     // Break condition
-    if left >= right return
+    if low >= high return
 
     // Partition the array according to a pivot
     indexPivot = partition(...)
-    quicksort(array, left, indexPivot - 1)
-    quicksort(array, indexPivot, right)
+    quicksort(array, low, indexPivot - 1)
+    quicksort(array, indexPivot, high)
 
-int partition(int[] array, int left, int right)
+int partition(int[] array, int low, int high)
     pivot=array at middle position
-    while left <= right
-        // Init left and right to make sure that elements before new left are smaller than pivot
-        // and elements afer new right are greater than pivot 
-        while array[left] < pivot left++
-        while array[right] > pivot right++
-        if left <= right 
-            swap elements left and right from array
-            left++, right--
-    return left
+    while low <= high
+        // Init low and high to make sure that elements before new low are smaller than pivot
+        // and elements afer new high are greater than pivot 
+        while array[low] < pivot low++
+        while array[high] > pivot high++
+        if low <= high 
+            swap elements low and high from array
+            low++, high--
+    return low
 ```
 
 [Implem](./src/io/teivah/sorting/QuickSort.java)
