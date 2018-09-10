@@ -37,13 +37,12 @@ Process:
 * Test before to submit: review lines + small test
 
 Optimization:
-* Check bottlenecks (O(n²) then O(n logn) then O(n) etc.). Dynamic programming then memoization (matrix etc.) to reduce the time complexity without any call stack
-* Do it yourself with a big concrete example
-* Simplify and generalize. Example: with a non-sorted array etc. What if the array was sorted? If we solve the problem this way we just have to generalize to the initial problem.
+* **Do it yourself with a big concrete example and derive an algorithm**
 * Base case and build. Start from the base case (e.g. n=1) and then try to build up from here.
+* Simplify and generalize. Example: with a non-sorted array etc. What if the array was sorted? If we solve the problem this way we just have to generalize to the initial problem.
 
-Links:
-* http://bigocheatsheet.com/
+Final Optimization:
+* Check bottlenecks (O(n²) then O(n logn) then O(n) etc.). Dynamic programming then memoization (matrix etc.) to reduce the time complexity without any call stack
 
 General:
 * Make sure to not be blocked on a wrong hypothesis
@@ -54,6 +53,8 @@ General:
 * If the traverse a tree and we want to get the final number representing the root-to-leaf path (1->2->3 => 123), we can recurse by multiplying by 10 each time the current sum
 * Finding median of three numbers: calculate sum, remove min and remove max
 * Constant extra space: O(1)
+
+http://bigocheatsheet.com/
 
 ## Java
 
