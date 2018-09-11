@@ -4,7 +4,7 @@ package io.teivah.arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static io.teivah.Util.arrayList;
+//import static io.teivah.Util.arrayList;
 
 public class WaveArray {
 	public static void main(String[] args) {
@@ -12,8 +12,8 @@ public class WaveArray {
 	}
 
 	public void main() {
-		final ArrayList<Integer> wave = wave(arrayList(5, 1, 3, 2, 4));
-		System.out.println(wave);
+//		final ArrayList<Integer> wave = wave(arrayList(5, 1, 3, 2, 4));
+//		System.out.println(wave);
 	}
 
 	public ArrayList<Integer> wave(ArrayList<Integer> a) {

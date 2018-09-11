@@ -24,8 +24,10 @@ Summary:
     * Pick a random element and partition the array such that all numbers that are less than the pivot come before all elements that are greater than it
     * Sort left, sort right
     * Use - 1
+* Bubble sort: two loops, second loop `for (int j = 0; j < n-i-1; j++)`
 * Matrix: use m[row][col] instead of m[y][x]
 * If question with modulo, it has to be applied during each addition
+* String is immutable so we can modify the internal char array without modifying the string value
 
 Process:
 * Listen all information
